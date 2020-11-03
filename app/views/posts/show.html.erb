@@ -2,7 +2,7 @@
   <strong>Title:</strong>
   <%= @post.title %>
 </h1>
- 
+
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
@@ -11,7 +11,7 @@
 <h2>Comments</h2>
 <%= render @post.comments %>
 
-<h3>Add a comment:</h3>
+<h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_post_path(@post) %>
