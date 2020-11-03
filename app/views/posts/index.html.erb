@@ -1,20 +1,22 @@
 <h1>Post listing</h1>
- 
-<%= link_to 'Create a new post', new_post_path %>
-<%= stylesheet_link_tag "posts" %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Create a new post', new_post_path %>
+<% end %>
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Content</th>
+    <th>Created by</th>
     <th></th>
   </tr>
  
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.content %></td>
+      <td><%= User.find(post.user_id).username %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Back', blog_index_path %>
