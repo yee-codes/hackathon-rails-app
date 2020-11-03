@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "comments" %>
+
 <p>
-<strong>Commenter:</strong>
+<strong>Name:</strong>
 <%= comment.commenter %>
 </p>
 
@@ -9,6 +11,7 @@
 </p>
 
 <p>
+
   <% if current_user.id == @post.user_id %>
     <%= link_to 'Destroy Comment', [comment.post, comment],
                 method: :delete,
