@@ -9,7 +9,11 @@
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+<%# deletes comment %>
+  <% if user_signed_in? %>
+    <%= link_to 'Destroy Comment', [comment.post, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  <% end %>
+              
 </p>
