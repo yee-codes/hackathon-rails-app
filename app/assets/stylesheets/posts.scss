@@ -7,7 +7,7 @@ h1{
     font-family: fantasy;
     color: red;
     text-align: center;
-    text-decoration: underline;
+    // text-decoration: underline;
 }
 
 h2{
@@ -30,4 +30,23 @@ th{
     font-size: 30px;
     font-family: fantasy;
     color:black;
+}
+
+td {
+    font-size: 16px;
+    font-family: fantasy;
+    color: darkblue;
+}
+
+.image {
+    width: 600px;
+    height: 450px;
+}
+
+.user-greeting, .navbar {
+    font-family: fantasy;
+}
+
+nav {
+    font-family: fantasy;
 }
