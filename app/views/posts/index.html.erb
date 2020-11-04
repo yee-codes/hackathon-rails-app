@@ -1,22 +1,27 @@
+<div class="center-table">
+  <% if user_signed_in? %>
+    <span class="navbar"><%= link_to 'Create a new post', new_post_path %></span>
+  <% end %>
+</div>
+
 <h1>Post Listing</h1>
 
-<% if user_signed_in? %>
-  <span class="navbar"><%= link_to 'Create a new post', new_post_path %></span>
-<% end %>
-
-<table>
+<table class="center-table">
   <tr>
-    <th>Title</th>
-    <th>Created by</th>
+    <th class="left">Title</th>
+    <th class="left">Created by</th>
     <th></th>
   </tr>
  
   <% @posts.each do |post| %>
-    <tr>
+    <tr class="add-margin">
       <td><%= post.title %></td>
       <td><%= User.find(post.user_id).username %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
     </tr>
   <% end %>
 </table>
-<%= link_to 'Back', blog_index_path %>
+
+<div class="center-table">
+  <%= link_to 'Back', blog_index_path %>
+</div>
